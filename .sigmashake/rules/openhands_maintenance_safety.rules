@@ -15,8 +15,7 @@ rule warn-openhands-dependency-upgrade {
   AND (input.command CONTAINS "npm update" OR input.command CONTAINS "pip install --upgrade")
   severity warning
   priority 80
-  ASK execution
-  PROMPT "Allow OpenHands to perform dependency upgrades?"
+  LOG execution
 }
 
 rule block-openhands-system-patch {
